@@ -1,0 +1,70 @@
+.navbar{
+    height: 75px;
+    color: black;
+    box-shadow: 0.5px 0 5px 2px #8690a3bb;
+}
+.right-nav{
+    gap: 1rem;
+}
+
+.item{
+    position: relative;
+    cursor: pointer;
+}
+
+
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top:50px;
+    right: 5px;
+    width: 150px;
+    background-color: rgba(240, 241, 243, 0.924);
+    box-shadow: 0.5px 0 5px 2px #8690a3bb;
+    border-radius: 10px;
+    display: none;
+    color: black;
+    a{  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 10px;
+        height: 100%;
+        width: 100%;
+    }
+    a:hover{
+        border-radius: 10px;
+        background-color: rgb(33, 106, 185);
+        color: #ffffff;
+    }
+}
+
+
+
+.menu-visible{
+    display: inline;
+}
+
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(224, 225, 227);
+    border-radius: 50%; 
+    box-shadow: 0.5px 0 5px 2px #8690a3bb;
+}
+.icon :hover{
+    background-color: rgb(23, 104, 191);
+    color: #ffffff;
+    border-radius: 50%;
+}
+.icon i{
+    color: rgb(23, 104, 191);
+    font-size: 1.2rem;
+    padding: 0.6rem;
+}
