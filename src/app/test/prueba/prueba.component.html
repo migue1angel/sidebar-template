@@ -1,16 +1,16 @@
-<div class="sidebar " [ngClass]="sidebarService.collapsed? 'sidebar-collapsed':''">
+<div class="sidebar " [ngClass]="sidebarCollapsed? 'sidebar-collapsed':''">
   <div class="side-top">
     <div class="side-header mb-2">
       <button class="btn-side" (click)="toggleCollapse()">
         <i class='pi pi-bars' style="font-size: 20px;font-weight:200;"></i>
       </button>
-      @if (!sidebarService.collapsed) {
+      @if (!sidebarCollapsed) {
       <h3 class="ml-1">Sidebar</h3>
       }
     </div>
     <hr class="w-full mb-4" style="height:solid 1px rgba(128, 128, 128, 0.806)">
 
-    <ul class="items" [ngClass]="sidebarService.collapsed ? '':'items-auto-scroll'">
+    <ul class="items" [ngClass]="sidebarCollapsed ? '':'items-auto-scroll'">
       @for(item of sideItems; track $index){
       <!-- items -->
       @if(!item.items || item.items.length == 0){
@@ -18,7 +18,7 @@
         <a [routerLink]="item.routelink" class="link" routerLinkActive="active-link"
           [routerLinkActiveOptions]="{ exact: true }">
           <i [ngClass]="item.icon" style="font-size: 18px"></i>
-          @if(!sidebarService.collapsed){
+          @if(!sidebarCollapsed){
           <div>
             <span class="ml-2">{{item.label}}</span>
           </div>
@@ -32,7 +32,7 @@
       <li class="item">
         <a class="link" (click)="toggleExpand(item)">
           <i [ngClass]="item.icon" style="font-size: 18px"></i>
-          @if(!sidebarService.collapsed){
+          @if(!sidebarCollapsed){
           <div>
             <span class="ml-2">{{item.label}}</span>
             <i [ngClass]="item.expanded ? 'pi pi-angle-up':'pi pi-angle-down'" style="font-size: 12px"></i>
@@ -43,7 +43,7 @@
           }
         </a>
         <!-- subitems -->
-        @if(item.items && item.expanded && !sidebarService.collapsed ){
+        @if(item.items && item.expanded && !sidebarCollapsed ){
         <ul class="sub-items">
           @for (item of item.items; track $index) {
           @if(!item.items || item.items.length == 0){
@@ -62,7 +62,7 @@
             </a>
           </li>
           <!-- sub-sub-items -->
-          @if(item.items && item.expanded && !sidebarService.collapsed ){
+          @if(item.items && item.expanded && !sidebarCollapsed ){
           <ul class="sub-sub-items">
             @for(item of item.items; track $index){
             <li class="sub-sub-item">
@@ -87,20 +87,20 @@
   <div class="footer-side">
     <div>
       <i class="pi pi-info-circle" style="font-size: 16px"></i>
-      @if(!sidebarService.collapsed){
+      @if(!sidebarCollapsed){
       <span class="ml-1"> Información </span>
       }
-      @if(sidebarService.collapsed){
+      @if(sidebarCollapsed){
       <span class="tooltip">Información</span>
       }
 
     </div>
     <div class="mb-2">
       <i class="pi pi-sign-out" style="font-size: 16px"></i>
-      @if(!sidebarService.collapsed){
+      @if(!sidebarCollapsed){
       <span class="ml-1"> Salir </span>
       }
-      @if(sidebarService.collapsed){
+      @if(sidebarCollapsed){
       <span class="tooltip">Salir</span>
       }
     </div>

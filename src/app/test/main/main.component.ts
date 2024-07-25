@@ -8,18 +8,22 @@ import { SidebarService } from '../../services/sidebar.service';
 })
 export class MainComponent {
   windowWidth: number;
-
-  constructor(private sidebarService: SidebarService) {
+  collapsed: boolean = true;
+  constructor() {
     this.windowWidth = window.innerWidth;
   }
-
+  
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.windowWidth = event.target.innerWidth;
   }
 
+  getCollapsed(event:boolean){
+    this.collapsed = event;
+  }
+
   getBodyClass() {
-    if (!this.sidebarService.collapsed && this.windowWidth > 768) {
+    if (!this.collapsed && this.windowWidth > 768) {
       return 'body-trimmed';
     } else {
       return '';

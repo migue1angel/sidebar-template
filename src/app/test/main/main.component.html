@@ -1,4 +1,4 @@
-<app-prueba></app-prueba>
+<app-prueba (collapsed)="getCollapsed($event)"></app-prueba>
 <div class="body" [ngClass]="getBodyClass()" >
     <app-navbar></app-navbar>
     <router-outlet></router-outlet>

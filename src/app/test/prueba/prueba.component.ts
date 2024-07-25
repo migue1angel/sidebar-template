@@ -15,20 +15,22 @@ export interface SidebarItem {
 })
 export class PruebaComponent {
   @Output() collapsed = new EventEmitter<boolean>();
-
+  sidebarCollapsed : boolean = true;
   sideItems: SidebarItem[];
   constructor(protected sidebarService: SidebarService) {
     this.sideItems = this.sidebarService.sideItems;
   }
   screenWidth = 0;
   toggleCollapse() {
-    this.sidebarService.collapsed = !this.sidebarService.collapsed;
+    this.sidebarCollapsed = !this.sidebarCollapsed
+    this.collapsed.emit(this.sidebarCollapsed)
   }
+
   toggleExpand(item: SidebarItem) {
-    if (this.sidebarService.collapsed) {
-      this.sidebarService.collapsed = !this.sidebarService.collapsed;
+    if (this.sidebarCollapsed) {
+      this.sidebarCollapsed = !this.sidebarCollapsed;
       item.expanded = !item.expanded;
-      } else if (!this.sidebarService.collapsed) {
+      } else if (!this.sidebarCollapsed) {
         item.expanded = !item.expanded;
     }
   }
