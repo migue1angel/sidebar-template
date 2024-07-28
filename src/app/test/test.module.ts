@@ -7,7 +7,7 @@ import { MainComponent } from './main/main.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MyComponentComponent } from './my-component/my-component.component';
 import { PanelMenuModule } from 'primeng/panelmenu';
-import { PruebaComponent } from './prueba/prueba.component';
+import { SideBarComponent } from './sidebar/sidebar.component';
 
 
 
@@ -16,7 +16,7 @@ import { PruebaComponent } from './prueba/prueba.component';
     MainComponent,
     NavbarComponent,
     MyComponentComponent,
-    PruebaComponent,
+    SideBarComponent,
     ],
     imports: [
       CommonModule,

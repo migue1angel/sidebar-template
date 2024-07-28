@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { MyComponentComponent } from './my-component/my-component.component';
-import { PruebaComponent } from './prueba/prueba.component';
+import { SideBarComponent } from './sidebar/sidebar.component';
 
 const routes: Routes = [
   
@@ -18,7 +18,7 @@ const routes: Routes = [
   },
   {
     path:'side',
-    component:PruebaComponent
+    component:SideBarComponent
   }
   ];
 

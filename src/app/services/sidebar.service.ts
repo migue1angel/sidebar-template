@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PrimeIcons } from 'primeng/api';
-import { SidebarItem } from '../test/prueba/prueba.component';
+import { SidebarItem } from '../test/sidebar/sidebar.component';
 
 @Injectable({
   providedIn: 'root',

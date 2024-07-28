@@ -9,11 +9,11 @@ export interface SidebarItem {
   expanded?: boolean;
 }
 @Component({
-  selector: 'app-prueba',
-  templateUrl: './prueba.component.html',
-  styleUrl: './prueba.component.scss'
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrl: './sidebar.component.scss'
 })
-export class PruebaComponent {
+export class SideBarComponent {
   @Output() collapsed = new EventEmitter<boolean>();
   sidebarCollapsed : boolean = true;
   sideItems: SidebarItem[];
@@ -25,10 +25,11 @@ export class PruebaComponent {
     this.sidebarCollapsed = !this.sidebarCollapsed
     this.collapsed.emit(this.sidebarCollapsed)
   }
-
+  
   toggleExpand(item: SidebarItem) {
     if (this.sidebarCollapsed) {
       this.sidebarCollapsed = !this.sidebarCollapsed;
+      this.collapsed.emit(this.sidebarCollapsed)
       item.expanded = !item.expanded;
       } else if (!this.sidebarCollapsed) {
         item.expanded = !item.expanded;
